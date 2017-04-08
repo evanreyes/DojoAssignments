@@ -1,0 +1,14 @@
+$ cd desktop
+$ cd DojoAssignments
+$ mkdir DojoAssignments
+$ cd DojoAssignments
+$ git init
+$ touch index.html; touch style.css; touch readme.md
+$ git add .
+$ git commit -m "uploading files"
+$ git add readme.md
+$ git remote add origin https://github.com/evanreyes/DojoAssignments.git
+$ git push -u origin master
+$ git log
+$ git add DojoAssignmentRepo.txt
+$ git commit -m “uploading DojoAssignmentRepo.txt”

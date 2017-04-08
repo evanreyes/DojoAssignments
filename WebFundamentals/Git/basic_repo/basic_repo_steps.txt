@@ -1,0 +1,25 @@
+$ mkdir basic_repo
+$ cd basic_repo
+$ git init
+$ touch basic_repo_steps.txt
+$ touch songlyrics.txt; touch selected filmography.txt
+$ echo "’Cause baby, now we've got bad blood
+> You know it used to be mad love
+> So take a look what you've done
+> ’Cause baby, now we've got bad blood, hey!
+> Now we've got problems
+> And I don't think we can solve 'em
+> You made a really deep cut
+> And baby, now we've got bad blood, hey!" >> songlyrics.txt
+$ echo "1985 - One Step Away, 1896 - Youngblood, 1986 - Flying, 1986 - Act of Vengeance, 1986 - River's Edge" >> selected_filmography.txt
+$ git add .
+$ git commit -m "initial commit"
+$ git remote add origin https://github.com/evanreyes/basic_repo.git
+$ git push -u origin master
+$ echo "1988 - Permanent Record, 1988 - The Prince of Pennsylvania, 1988 - The Night Before, 1988 - Dangerous Liaisons, 1989 - Life Under Water" >> selected_filmography.txt
+$ git add .
+$ git commit -m "updated filmography"
+$ git push origin master
+$ git add .
+$ git commit -m “updated steps”
+$ git push origin master

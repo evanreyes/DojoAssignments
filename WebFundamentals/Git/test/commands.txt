@@ -1,0 +1,57 @@
+Last login: Mon Apr  3 02:07:40 on console
+Heel-Turn-2:~ evanreyes$ desktop
+-bash: desktop: command not found
+Heel-Turn-2:~ evanreyes$ cd desktop
+Heel-Turn-2:desktop evanreyes$ mkdir test
+Heel-Turn-2:desktop evanreyes$ cd test
+Heel-Turn-2:test evanreyes$ touch index.html; touch styles.css; touch commands.txt
+Heel-Turn-2:test evanreyes$ cp index.html index_2.html
+Heel-Turn-2:test evanreyes$ rm styles.css
+Heel-Turn-2:test evanreyes$ cd ..
+Heel-Turn-2:desktop evanreyes$ mkdir destination
+Heel-Turn-2:desktop evanreyes$ mv ../test/index_2.html ../destination
+mv: rename ../test/index_2.html to ../destination: No such file or directory
+Heel-Turn-2:desktop evanreyes$ mv ../test/index_2.html ../destination index_2.html
+usage: mv [-f | -i | -n] [-v] source target
+       mv [-f | -i | -n] [-v] source ... directory
+Heel-Turn-2:desktop evanreyes$ cd destination
+Heel-Turn-2:destination evanreyes$ cd ..
+Heel-Turn-2:desktop evanreyes$ cd test
+Heel-Turn-2:test evanreyes$ mv index_2.html ../desktop
+Heel-Turn-2:test evanreyes$ cd ..
+Heel-Turn-2:desktop evanreyes$ ls
+Evan Louro-Reyes proof of coverage.pdf	sentinel
+Evan Louro-Reyes statement.pdf		test
+desktop					untitled folder
+destination
+Heel-Turn-2:desktop evanreyes$ cd test
+Heel-Turn-2:test evanreyes$ ls
+commands.txt	index.html
+Heel-Turn-2:test evanreyes$ cd ..
+Heel-Turn-2:desktop evanreyes$ mv desktop index_2.html
+Heel-Turn-2:desktop evanreyes$ mv index_2.html ../destination
+Heel-Turn-2:desktop evanreyes$ mv index_2.html /destination/index_2.html
+mv: rename index_2.html to /destination/index_2.html: No such file or directory
+Heel-Turn-2:desktop evanreyes$ mv index_2.html /destination
+mv: rename index_2.html to /destination: Permission denied
+Heel-Turn-2:desktop evanreyes$ mv index_2.html /desktop/destination/index_2.html
+mv: rename index_2.html to /desktop/destination/index_2.html: No such file or directory
+Heel-Turn-2:desktop evanreyes$ mv index_2.html /destination/index_2.html
+mv: rename index_2.html to /destination/index_2.html: No such file or directory
+Heel-Turn-2:desktop evanreyes$ mv /test/index_2.html /destination/index_2.html
+mv: rename /test/index_2.html to /destination/index_2.html: No such file or directory
+Heel-Turn-2:desktop evanreyes$ mv ~/test/index_2.html ~/destination/index_2.html
+mv: rename /Users/evanreyes/test/index_2.html to /Users/evanreyes/destination/index_2.html: No such file or directory
+Heel-Turn-2:desktop evanreyes$ cd test
+Heel-Turn-2:test evanreyes$ mv index_2.html ../
+Heel-Turn-2:test evanreyes$ cd ..
+Heel-Turn-2:desktop evanreyes$ mv index_2.html destination
+Heel-Turn-2:desktop evanreyes$ rm -rf destinations
+Heel-Turn-2:desktop evanreyes$ rm -rf destination
+Heel-Turn-2:desktop evanreyes$ 
+
+
+
+
+
+

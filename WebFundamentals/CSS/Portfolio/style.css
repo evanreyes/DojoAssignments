@@ -1,0 +1,116 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+#wrapper{
+    height: 1100px;
+    width: 970px;
+    background-color: #e5e6e8;
+}
+#body{
+    height: 920px;
+    width: auto;
+    background: radial-gradient(#6F5964, #1A0A0E);
+    padding: 20px;
+}
+#tophalf{
+    margin-bottom: 20px;
+}
+#portrait{
+    height: auto;
+    width: 400px;
+    display: inline-block;
+    background-color: gray;
+    padding: 5px;
+    vertical-align: top;
+    margin-right: 10px;
+}
+#aboutme{
+    height: 277px;
+    width: 490px;
+    display: inline-block;
+    background: linear-gradient(-90deg, #DBCCDA, #FFFFFF);
+    vertical-align: top;
+    margin-left: 10px;
+}
+#master{
+    font-family: sans-serif;
+    margin-left: 400px;
+    margin-right: 25px;
+    display: inline-block;
+}
+#photo{
+    height: auto;
+    width: 400px;
+}
+#footer{
+    padding: 5px;
+    font-family: sans-serif;
+}
+.heading{
+    font-family: sans-serif;
+    font-weight: 500;
+    background: linear-gradient(#B5B6B9, #878593, #B5B6B9);
+    color: white;
+    padding: 10px;
+}
+.examples{
+    height: 400px;
+    width: 287px;
+    background: linear-gradient(-90deg, #DBCCDA, #FFFFFF);
+    display: inline-block;
+    margin-right: 20px;
+    vertical-align: top;
+    padding-bottom: 20px;
+}
+.technologies{
+    height: 200px;
+    width: 287px;
+    background: linear-gradient(-90deg, #DBCCDA, #FFFFFF);
+    display: inline-block;
+    margin-right: 20px;
+    vertical-align: top;
+}
+.techinner{
+    height: auto;
+    width: auto;
+    background: linear-gradient(-90deg, #DBCCDA, #FFFFFF);
+    padding: 10px 15px 0px 15px;
+}
+.projectphotos{
+    width: 287px;
+    height: auto;
+}
+.techlogos{
+    height: 35px;
+    width: 35px;
+    padding: 5px;
+}
+.button{
+    background-color: #407D61;
+    font-size: 10pt;
+    color: white;
+    padding: 5px;
+    border: 2px black;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+.socialmedia{
+    height: 20px;
+}
+.sociallink{
+    font-style: italic;
+}
+h1{
+    font-family: "Comic Sans MS";
+    display: inline-block;
+    margin: 10px 0px 10px 25px;
+}
+a{
+    color: black;
+}
+p{
+    padding: 10px;
+    font-family: sans-serif;
+}

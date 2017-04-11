@@ -1,0 +1,202 @@
+*{
+    margin-top: 0;
+    padding: 0;
+}
+img{
+    height: 100px;
+    display: inline;
+    vertical-align: middle;
+    position: relative;
+    top: 20px;
+}
+h1{
+    font-family: sans-serif;
+    font-weight: 400;
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+    top: 20px;
+}
+h1 span{
+    color: #1766A3;
+}
+#banner{
+    height: 55px;
+    width: 800px;
+    background: linear-gradient(#1865A1, #4881AE, #1865A1);
+}
+h2{
+    color: white;
+    font-family: sans-serif;
+    font-weight: 200;
+    padding: 15px;
+}
+#wrapper{
+    width: 800px;
+    height: 600px;
+    background: linear-gradient(#E3E3E3, white, white, white);
+}
+#sidebar{
+    width: 25%;
+    padding-top: 20px;
+    display: inline-block;
+}
+#sidebar h4{
+    font-family: sans-serif;
+}
+#sidebar h5{
+    font-family: sans-serif;
+}
+h4 span{
+    color: red;
+}
+h5 span{
+    color: #226DA6;
+}
+#ad{
+    height: auto;
+    width: auto;
+    background-image: url("./images/ad_background.png");
+    text-align: center;
+    font-size: 14pt;
+    font-weight: 200;
+    padding-bottom: 20px;
+}
+#ad p{
+    color: white;
+    font-family: sans-serif;
+    padding: 20px 15px 0px 15px;
+}
+#ad img{
+    position: relative;
+    top: -20px;
+}
+button{
+    font-size: 10pt;
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    width: 90%;
+    margin: 0 auto;
+    display: block;
+}
+.button1{
+    background: linear-gradient(#5695C4, #1866A3);
+}
+.button2{
+    background: linear-gradient(#F3A741, #FE6C00);
+}
+.button3{
+    background-color: #00CDE2;
+    position: relative;
+    top: -20px;
+}
+#mainbody{
+    vertical-align: top;
+    display: inline-block;
+    padding-left: 30px;
+}
+#bodyheader{
+    width: auto;
+    height: 70px;
+    vertical-align: top;
+}
+#bodyheader img{
+    height: 30px;
+    position: relative;
+    top: 10px;
+}
+#bodyheader a{
+    position: relative;
+    top: 15px;
+    text-decoration: none;
+    font-family: sans-serif;
+    font-size: 11pt;
+    display: inline-block;
+    padding-right: 100px;
+    color: #3277AB;
+}
+#contact{
+    vertical-align: top;
+    display: inline-block;
+    height: auto;
+    padding: 10px 0px 0px 215px;
+}
+#contact img{
+    position: relative;
+    right: 25px;
+}
+#contact h6{
+    position: relative;
+    top: -30px;
+    left: 20px;
+}
+#contact h6 span{
+    position: relative;
+    top: -77px;
+}
+#contact h2{
+    color: #02C4E2;
+    font-weight: 400;
+    position: relative;
+    top: -70px;
+}
+hr{
+    width: auto;
+}
+#maincontent{
+    width: 550px;
+    display: inline-block;
+    list-style: inside;
+    font-family: sans-serif;
+}
+#maincontent h3{
+    color: #377AAE;
+}
+#maincontent span{
+    color: #18A4B9;
+}
+#maincontent img{
+    position: relative;
+    top: -5px;
+    padding-left: 25%;
+}
+#maincontent p{
+    font-size: 10pt;
+}
+#maincontent ul, ol{
+    font-size: 10pt;
+}
+#maincontent em{
+    font-style: normal;
+    font-weight: 600;
+}
+#footer{
+    width: 550px;
+    height: auto;
+    border: 5px solid #007FE4;
+    border-bottom: 0px;
+}
+#footer img{
+    height: 90px;
+    width: auto;
+    display: inline-block;
+    vertical-align: top;
+    position: relative;
+    left: -120px;
+    top: 10px;
+}
+#footer em{
+    font-style: italic;
+    font-weight: 400;
+}
+#footercontent{
+    width: 300px;
+    display: inline-block;
+    vertical-align: top;
+    position: relative;
+    top: 10px;
+    left: -120px;
+}

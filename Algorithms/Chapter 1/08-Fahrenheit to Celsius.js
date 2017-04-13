@@ -3,6 +3,6 @@
 function fahrenheitToCelsius(fDegrees) {
 	var x = fDegrees
 	x = (x - 32) * 5/9
-	console.log(fDegrees+"°"+" "+"Fahrenheit"+" "+"is"+" "+x+"°"+" "+"Celsius")
+	console.log(fDegrees+"° Fahrenheit is"+" "+x+"° Celsius")
 }
 fahrenheitToCelsius(212)

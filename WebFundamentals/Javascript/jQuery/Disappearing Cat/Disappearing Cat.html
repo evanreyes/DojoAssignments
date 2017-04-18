@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Goodbye Jacques</title>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function() {
+                $('img').click(function() {
+                    $(this).hide();
+                });
+                $('button').click(function() {
+                    $('img').show();
+                });
+            });
+        </script>
+        <style>
+            #wrapper{
+                height: 500px;
+                width: 1200px;
+            }
+            .images{
+                display: inline-block;
+            }
+            h1{
+                font-family: sans-serif;
+            }
+            img{
+                height: 200px;
+                width: 200px;
+                border: 5px solid #000000;
+                margin: 10px;
+                padding: 10px;
+            }
+            button{
+                background-color: #1C8B85;
+                color: white;
+                cursor: pointer;
+                font-size: 12pt;
+                padding: 20px;
+
+            }
+        </style>
+    </head>
+    <body>
+        <div id="wrapper">
+            <h1>jQuery - Goodbye Jacques (the cat)</h1>
+            <div class="images">
+                <img src="cat.jpg" alt="">
+            </div>
+            <div class="images">
+                <img src="cat.jpg" alt="">
+            </div>
+            <div class="images">
+                <img src="cat.jpg" alt="">
+            </div>
+            <div class="images">
+                <img src="cat.jpg" alt="">
+            </div>
+            <div class="images">
+                <img src="cat.jpg" alt="">
+            </div>
+            <div class="images">
+                <img src="cat.jpg" alt="">
+            </div>
+            <div class="images">
+                <img src="cat.jpg" alt="">
+            </div>
+            <div class="images">
+                <img src="cat.jpg" alt="">
+            </div><br><br>
+            <button type="button" name="button">Bring back the cat!</button>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>jQuery Functions</title>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function() {
+                $('.clicktest').click(function() {           //.click
+                    alert('You clicked!');
+                    });
+                $('.hide').click(function() {
+                     $('.hideshow').hide();
+                    });
+                $('.show').click(function() {
+                     $('.hideshow').show();
+                    });
+                $('.togbutt').click(function() {
+                    $('.toggle').toggle();
+                    });
+                $('.slideup').click(function() {
+                    $('.slider').slideUp();
+                    });
+                $('.slidedown').click(function() {
+                    $('.slider').slideDown();
+                    });
+                $('.slidetoggle').click(function() {
+                    $('.slider').slideToggle();
+                    });
+                $('.fadein').click(function() {
+                    $('.fader').fadeIn();
+                    });
+                $('.fadeout').click(function() {
+                    $('.fader').fadeOut();
+                    });
+                $('.addclass').addClass('highlight');
+                $('.beforeafter').before("I got jQuery'd in before!");
+                $('.beforeafter').after("I got jQuery'd in after!");
+                $('.append').click(function() {
+                    $('.appendme').append("<br>Now I'm here too<br>");
+                    });
+                $('.html').click(function() {
+                    $('.appendme').html("Now I'm here instead!");
+                    });
+                var title = $('em').attr('title');
+                    $('.attr').text(title);
+                $('.value').click(function(){
+                    $("input:text").val("You set me!");
+                    });
+                $('.text').click(function(){
+                    $('.text').text('The text has been set on click.');
+                    });
+                $('.data').data('facts', { first: "Seattle", last: "Mariners" } );
+                    $('span:first').text( $('.data').data('facts').first);
+                    $('span:last').text( $('.data').data('facts').last);
+                });
+        </script>
+        <style>
+            div{
+                width: 200px;
+                justify-content: left;
+                border-bottom: 2px solid;
+            }
+            .highlight{
+                color: blue;
+                background-color: yellow;
+                font-family: sans-serif;
+                font-weight: 600;
+            }
+            em{
+                font-style: normal;
+                font-family: sans-serif;
+                font-weight: bold;
+            }
+            span{
+                color: #1C8B85;
+                font-weight: bold;
+                font-family: sans-serif;
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            <p class="clicktest">.click Test</p>
+        </div>
+        <div>
+            <p class="hideshow">Hide and seek</p>
+            <button class="hide">Hide it!</button>
+            <button class="show">Show it!</button><br><br>
+        </div>
+        <div>
+            <p class="toggle">Toggle Me</p>
+            <p class="toggle" style="display:none;">I'm Toggled</p>
+            <button class="togbutt">Toggle it!</button><br><br>
+        </div>
+        <div>
+            <p class="slider">One order of sliders</p>
+            <button class="slideup">Slide up!</button>
+            <button class="slidedown">Slide down!</button>
+            <button class="slidetoggle">Slide toggle!</button><br><br>
+        </div>
+        <div>
+            <p class="fader">Ride the Fader</p>
+            <button class="fadein">Fade in!</button>
+            <button class="fadeout">Fade out!</button><br><br>
+        </div>
+        <div>
+            <p>No Class</p>
+            <p class="addclass">Classy</p>
+        </div>
+        <div>
+            <br><p class="beforeafter">I was already here...</p><br><br>
+        </div>
+        <div>
+            <p class="appendme">I was also already here...</p><br>
+            <button class="append">Append some HTML</button>
+            <button class="html">Change some HTML</button><br><br>
+        </div>
+        <div>
+            <p class="attribute">Here we will test the <em title="sans serif, bold">.attr</em> function.</p>
+            <p>The bold text has been giving the title of: <p class="attr"></p></p>
+        </div>
+        <div>
+            <br><input class="val" type="text" name="text" value="Nothing yet"><br><br>
+            <button class="value" type="button" name="button">Set the value</button><br><br>
+        </div>
+        <div>
+            <p class="text">Textify</p>
+        </div>
+        <div class="data">
+            <p>My favorite team is the <span></span> <span></span>!</p>
+        </div>
+    </body>
+</html>

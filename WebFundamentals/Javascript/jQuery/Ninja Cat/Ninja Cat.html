@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Ninja-Cat Puzzle</title>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function() {
+                $('#piece1').click(function() {
+                    $(this).find('img').toggle();
+                });
+                $('#piece2').click(function() {
+                    $(this).find('img').toggle();
+                });
+                $('#piece3').click(function() {
+                    $(this).find('img').toggle();
+                });
+                $('#piece4').click(function() {
+                    $(this).find('img').toggle();
+                });
+                $('#piece5').click(function() {
+                    $(this).find('img').toggle();
+                });
+            });
+        </script>
+        <style>
+            img{
+                cursor: pointer;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="piece1">
+            <img src="./img/cat0.png">
+            <img src="./img/ninja0.png" style="display:none;">
+        </div>
+        <div id="piece2">
+            <img src="./img/cat1.png">
+            <img src="./img/ninja1.png" style="display:none;">
+        </div>
+        <div id="piece3">
+            <img src="./img/cat2.png">
+            <img src="./img/ninja2.png" style="display:none;">
+        </div>
+        <div id="piece4">
+            <img src="./img/cat3.png">
+            <img src="./img/ninja3.png" style="display:none;">
+        </div>
+        <div id="piece5">
+            <img src="./img/cat4.png">
+            <img src="./img/ninja4.png" style="display:none;">
+        </div>
+    </body>
+</html>

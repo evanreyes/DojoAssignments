@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Users</title>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function() {
+                $('form').submit(function() {
+                    var firstname = $('input[name=first]').val()
+                    var lastname = $('input[name=last]').val()
+                    var address = $('input[name=email]').val()
+                    var number = $('input[name=contact]').val()
+                    var newrow = '<tr><td>' + firstname + '</td><td>' + lastname + '</td><td>' + address + '</td><td>' + number + '</td></tr>'
+                    $('table tbody').append(newrow);
+                    return false;
+                });
+            });
+        </script>
+        <style>
+            table{
+                border: 1px solid black;
+                border-spacing: 10px;
+            }
+            th, td{
+                padding-right: 30px;
+            }
+            h1{
+                width: 300px;
+                border-bottom: 1px solid black;
+            }
+            .placeholder{
+                opacity: 50%;
+            }
+            input{
+                margin: 4px 0px;
+            }
+        </style>
+    </head>
+    <body>
+        <table>
+            <thead>
+                <tr>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Email Address</th>
+                    <th>Contact #</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+        <h1>Add User</h1>
+            <form class="" action="index.html" method="post">
+                First Name: <input type="text" name="first" placeholder="First Name"><br>
+                Last Name: <input type="text" name="last" placeholder="Last Name"><br>
+                Email Address: <input type="text" name="email" placeholder="Email Address"><br>
+                Contact #: <input type="text" name="contact" placeholder="Contact #"><br>
+                <input type="submit" value="Add User">
+            </form>
+    </body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Users</title>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function() {
+                $('form').submit(function() {
+                    var firstname = $('input[name=first]').val()
+                    var lastname = $('input[name=last]').val()
+                    var card = '<div class="card"><h2>' + firstname + ' ' + lastname + '</h2>' + '<p>' + 'Click for description' + '</p></div>'
+                    $('body').append(card);
+                    return false;
+                });
+
+                $(document).on("click", ".card", function(){
+                    var description = $('textarea[name=desc]').val()
+                    var newcard = '<p>' + description + '</p>'
+                    $('.card').html(newcard);
+                });
+            });
+        </script>
+        <style>
+            .card{
+                height: auto;
+                width: 300px;
+                font-family: sans-serif;
+                border: 2px solid blue;
+                text-align: center;
+                margin: 10px 0px;
+            }
+            h1{
+                width: 300px;
+                border-bottom: 1px solid black;
+            }
+            .placeholder{
+                opacity: 50%;
+            }
+            input, textarea{
+                margin: 5px 0px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Create a Contact</h1>
+            <form class="" action="index.html" method="post">
+                First Name: <input type="text" name="first"><br>
+                Last Name: <input type="text" name="last"><br>
+                Description: <br><textarea type="text" name="desc" placeholder="Enter a description" rows="4" cols="30"></textarea><br>
+                <input type="submit" value="Add User">
+            </form>
+        <div>
+
+        </div>
+    </body>
+</html>

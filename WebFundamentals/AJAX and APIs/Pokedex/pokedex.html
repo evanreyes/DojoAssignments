@@ -13,31 +13,23 @@
                 $('img').click(function() {
                     var num = $(this).attr('id');
                     var url = "http://pokeapi.co/api/v1/pokemon/"+num;
-
-
                     $.get(url, function(data) {
                         console.log(data);
-                        console.log(data.types.length);
-                        function type(){
-                            for (var z = 0; z < data.types.length; z++){
-                                console.log(data.types[z].name)
-                            }
+                        var html_str = '';
+                        html_str += '<h2>'+data.name+'</h2>';
+                        html_str += '<img id="' + num +'" src="http://pokeapi.co/media/img/' + num + '.png"><br>'
+                        html_str += '<h3>Types</h3>';
+                        html_str += '<ul>';
+                        for (var z = 0; z < data.types.length; z++){
+                            html_str += '<li>'+data.types[z].name+'</li>';
                         }
-
-                        $('#pokebody').html('<h2>'+data.name+'</h2>'+
-                            '<img id="' + num +'" src="http://pokeapi.co/media/img/' + num + '.png"><br>'+
-                            '<h3>Types</h3>'+
-                            '<ul><li>'+data.types[z].name+'</li></ul>'+
-
-
-
-                            '<h3>Height</h3>'+
-                            '<p>'+data.height+'</p>'+
-                            '<h3>Weight</h3>'+
-                            '<p>'+data.weight+'</p>'
-                        )
-                        }, "json");
-
+                        html_str += '</ul>';
+                        html_str += '<h3>Height</h3>';
+                        html_str += '<p>'+data.height+'</p>';
+                        html_str += '<h3>Weight</h3>';
+                        html_str += '<p>'+data.weight+'</p>';
+                        $("#pokebody").html(html_str);
+                    }, "json");
                 });
             });
         </script>
@@ -53,6 +45,8 @@
                 display: inline-block;
                 font-family: sans-serif;
                 padding: 5px;
+                position: fixed;
+                text-align: center;
                 vertical-align: top;
             }
         </style>

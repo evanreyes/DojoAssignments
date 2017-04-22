@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Weather</title>
+        <script type="text/javascript" src='http://code.jquery.com/jquery-1.10.2.min.js'></script>
+        <script type="text/javascript">
+        $(document).ready(function() {
+            $('form').submit(function() {
+                var city = $('input[name=city]').val()
+                var url = 'http://api.openweathermap.org/data/2.5/weather?q='+city+'&APPID=221543180bdf866ba3fae16f6a4bcbca'
+                $.get(url, function(data) {
+                    var temp = Math.round(((9/5)*(data.main.temp - 273))+32)     // 9/5 (K - 273) + 32, rounded
+                    var html_str = '';
+                    html_str += '<h1>'+data.name+'</h1>';
+                    html_str += '<h3>It is currently:</h3>';
+                    html_str += '<p>'+temp+' degrees</p>'
+                    $('#weather').html(html_str);
+                }, 'json');
+                // don't forget to return false so the page doesn't refresh
+                return false;
+            });
+
+        });
+    </script>
+    </head>
+    <body>
+        <form action="index.html" method="post">
+            <input type="text" name="city"></input>
+            <input type="submit" value="How's the weather?">
+        </form>
+        <div id="weather">
+        </div>
+    </body>
+</html>

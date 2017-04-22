@@ -1,0 +1,99 @@
+<!-- <!DOCTYPE html> -->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Game of Thrones</title>
+        <script type="text/javascript" src='http://code.jquery.com/jquery-1.10.2.min.js'></script>
+        <script type="text/javascript">
+        $(document).ready(function() {
+            $('img').click(function() {
+                var num = $(this).attr('houseid');
+                var url = "https://anapioficeandfire.com/api/houses/"+num;
+                console.log(num)
+                console.log(url)
+                $.get(url, function(data) {
+                    console.log(data);
+                    var facts = '';
+                    facts += '<h2>'+data.name+'</h2>';
+                    facts += '<h4>Region: <br></h4><p>'+data.region+'</p><br>';
+                    facts += '<h4>Coat of Arms: <br></h4><p>'+data.coatOfArms+'</p><br>';
+                    facts += '<h4>Words: <br></h4><p>'+data.words+'</p><br>';
+                    facts += '<h4>Titles: </h4><ul>';
+                    for (var z = 0; z < data.titles.length; z++){
+                        facts += '<li>'+data.titles[z]+'</li>'
+                    }
+                    facts += '</ul><h4>Seats: </h4><ul>';
+                    for (var y = 0; y < data.seats.length; y++){
+                        facts += '<li>'+data.seats[y]+'</li>'
+                    }
+                    facts += '</ul>';
+                    $('.houseinfo').html(facts);
+                }, "json");
+            });
+        });
+        </script>
+        <style>
+            body{
+                background-color: black;
+            }
+            #wrapper{
+                width: 1500px;
+                text-align: center;
+            }
+            #logo{
+                width: 400px;
+            }
+            .houseinfo{
+                height: 750px;
+                width: 500px;
+                border: 5px solid white;
+                display: inline-block;
+                margin-top: 35px;
+                padding: 20px;
+            }
+            .houses{
+                display: inline-block;
+                margin: 0px 20px 20px 20px;
+                text-align: none;
+            }
+            .houses img{
+                width: 300px;
+            }
+            h2, h3, h4, p, li{
+                color: white;
+                font-family: sans-serif;
+            }
+            ul{
+                display: inline-block;
+                text-align: left;
+            }
+            h2{
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="wrapper">
+            <img id="logo" src="./img/logo.png" alt="Game of Thrones logo"></img><br>
+            <div class="houses">
+                <h3>House Baratheon</h3>
+                <img src="./img/baratheon.jpg" houseid="17" alt="House Baratheon"></img>
+            </div>
+            <div class="houses">
+                <h3>House Lannister</h3>
+                <img src="./img/lannister.jpg" houseid="229" alt="House Lannister"></img>
+            </div>
+            <div class="houses">
+                <h3>House Stark</h3>
+                <img src="./img/stark.jpg" houseid="362" alt="House Stark"></img>
+            </div>
+            <div class="houses">
+                <h3>House Targaryen</h3>
+                <img src="./img/targaryen.jpg" houseid="378" alt="House Targaryen"></img>
+            </div>
+            <div class="houseinfo">
+
+            </div>
+        </div>
+    </body>
+</html>

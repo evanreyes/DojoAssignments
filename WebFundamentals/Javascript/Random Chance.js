@@ -1,5 +1,5 @@
 function slots(quarters){
-    win = Math.trunc(Math.random() * 100);
+    var win = Math.trunc(Math.random() * 100);
     console.log("(The winning number is "+win+".)");
     roll = 1;
     for (var quarters; quarters > 0; quarters--){

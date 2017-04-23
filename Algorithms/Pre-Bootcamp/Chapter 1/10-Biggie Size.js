@@ -4,11 +4,10 @@
 
 function makeItBig(arr) {
     for(var x = 0; x < arr.length; x++) {
-        if(arr[x] > 0)
-            {
+        if(arr[x] > 0) {
                 arr[x] = "big"
             }
-    } 
-    console.log(arr) 
+    }
+    console.log(arr)
 }
 makeItBig([-1,3,5,-5])

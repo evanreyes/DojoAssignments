@@ -11,4 +11,4 @@ function ftff(arr) {
 		console.log("Just right!")
 	}
 }
-ftff([5,2,3,4,5])
+ftff([1,2,3,4,5])

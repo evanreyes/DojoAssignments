@@ -3,9 +3,13 @@
 function negout(arr) {
 	arrnew = []
     for(var x = 0; x < arr.length; x++) {
-        if(arr[x] > 0)
-       	arrnew.push(arr[x])
-        arrnew[x] = arrnew[x] * -1
+        if(arr[x] > 0){
+	       	arrnew.push(arr[x]);
+	        arrnew[x] = -Math.abs(arrnew[x]);
+		}
+		else {
+			arrnew.push(arr[x]);
+		}
     }
 	console.log(arr)
 	console.log(arrnew)

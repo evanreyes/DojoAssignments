@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Plan a Cruise!</title>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function() {
+                $('.date').datepicker({
+                    dayNamesMin: ['S', 'M', 'T', 'W', 'T', 'F', 'S']
+                });
+
+                $('form').submit(function() {
+                    var from = $('input[name=from]').datepicker("getDate")
+                    var to = $('input[name=to]').datepicker("getDate")
+                    var user = $('input[name=user]').val()
+                    if (to > from) {
+                        alert('You have to leave before you can return!')
+                    }
+                    else {
+                        alert("Thanks, "+user+"! You're going on a cruise from "+from +"to "+to+"!")
+                    }
+
+                });
+            });
+        </script>
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+    <body>
+        <h1>Welcome to the Coding Dojo Plan-a-Cruise</h1>
+        <form class="" action="index.html" method="post">
+            From: <input class="date" type="text" name="from" value="">
+            To: <input class="date" type="text" name="to" value="">
+            Name: <input type="text" name="user" value="">
+            <input type="submit" value="Submit">
+        </form>
+    </body>
+</html>

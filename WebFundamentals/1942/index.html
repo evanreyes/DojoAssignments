@@ -68,8 +68,22 @@
 
 	var alive = true;
 
+	var startGame;
+
+	startTheGame();
+
+	function startTheGame() {
+		startGame = setInterval(gameLoop, 20);
+	}
+
 	function gameLoop() {
-		if (alive = true) {
+		console.log(alive);
+		if (alive == false) {
+			displayScore();
+			clearInterval(startGame);
+			return;
+		}
+		else {
 		detectDeath();
 		displayHero();
 		moveEnemies();
@@ -80,9 +94,7 @@
 		displayScore();
 		displayEnemies();
 		}
-		else if (alive = false){
-			return;
-		}
+
 	}
 
 	function displayHero() {
@@ -163,7 +175,7 @@
 		}
 	}
 
-	setInterval(gameLoop, 20);
+
 
 	document.onkeydown = function(e) {
 		if (e.keyCode == 37){

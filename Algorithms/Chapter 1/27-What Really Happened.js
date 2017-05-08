@@ -12,25 +12,25 @@ function whatReallyHappensToday(){
 	else{
 		console.log("Phew... no volcano.")
 	}
-	if(tsunami >= 1 && tsunami <= 15){
+	if(tsunami < 15){
 		console.log("It's a tsunami!")
 	}
 	else{
 		console.log("Phew... no tsunami.")
 	}
-	if(earthquake >= 1 && earthquake <= 20){
+	if(earthquake < 20){
 		console.log("It's an earthquake!")
 	}
 	else{
 		console.log("Phew... no earthquake.")
 	}
-	if(blizzard >= 1 && blizzard <= 25){
+	if(blizzard < 25){
 		console.log("It's a blizzard!")
 	}
 	else{
 		console.log("Phew... no blizzard.")
 	}
-	if(meteor >= 1 && meteor <= 30){
+	if(meteor < 30){
 		console.log("It's a meteor strike!!!")
 	}
 	else{

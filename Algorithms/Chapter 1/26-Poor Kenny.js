@@ -2,20 +2,20 @@
 
 function whatHappensToday(){
 	var outcome = Math.trunc(Math.random() * 100);
-	if(outcome >= 1 && outcome <= 10){
-		console.log("It's a volcano!")
+	if(outcome < 10){
+		return "It's a volcano!"
 	}
-	else if(outcome >= 11 && outcome <= 25){
-		console.log("It's a tsunami!")
+	else if(outcome < 25){
+		return "It's a tsunami!"
 	}
-	else if(outcome >= 26 && outcome <= 45){
-		console.log("It's an earthquake!")
+	else if(outcome < 45){
+		return "It's an earthquake!"
 	}
-	else if(outcome >= 46 && outcome <= 70){
-		console.log("It's a blizzard!")
+	else if(outcome < 70){
+		return "It's a blizzard!"
 	}
-	else if(outcome >= 71 && outcome <= 100){
-		console.log("It's a meteor strike!!!")
+	else if(outcome < 100){
+		return "It's a meteor strike!!!"
 	}
 }
-whatHappensToday()
+console.log(whatHappensToday())

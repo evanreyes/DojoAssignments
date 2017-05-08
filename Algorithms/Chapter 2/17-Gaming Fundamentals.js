@@ -21,12 +21,13 @@ function rollOne() {
 
 function playFives(num) {
 	for (var i = 1; i <= num; i++) {
-		var rollOne();
-		if (roll == 5) {
+		rollOne();
+		if (rollOne() == 5) {
 			console.log("That's good luck!")
 		}
-		return rollOne;
+		console.log(rollOne())
 	}
+
 }
 
-console.log(playFives(5))
+console.log(playFives(1))

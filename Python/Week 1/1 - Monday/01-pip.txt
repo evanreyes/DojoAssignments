@@ -1,0 +1,15 @@
+pip installs Python packages (software bundles).
+
+pip list shows what packages are currently installed. It looks like most of them were preinstalled when Python was installed via Homebrew.
+
+Trying to install again gives a message that “requirement already satisfied”.
+
+Freeze lists packages in “requirements format.” 
+
+You can write a file with the requirements to the current directory.
+
+Uninstall uninstalled Django.
+
+Show showed info about Django.
+
+Search searched for every package with the search term.

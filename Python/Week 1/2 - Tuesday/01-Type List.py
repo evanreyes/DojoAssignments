@@ -13,8 +13,8 @@ def typeList(list):
             ints += item
     if s and i > 0:
         print "The list you entered is of mixed type"
-        print strs
-        print ints
+        print "String:", strs
+        print "Sum:", ints
     elif s > 0 and i == 0:
         print "The list you entered is of string type"
         print "String:", strs
@@ -23,4 +23,4 @@ def typeList(list):
         print "Sum:", ints
 
 
-typeList(['magical','unicorns'])
+typeList(['magical unicorns',19,'hello',98.98,'world'])

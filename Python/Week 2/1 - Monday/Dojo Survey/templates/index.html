@@ -1,0 +1,31 @@
+
+<html>
+    <head>
+        <title>Dojo Survey</title>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/index.css') }}">
+    </head>
+    <body>
+        <h1>Fill out our Coding Dojo survey!</h1>
+        <form action='/result' method='post'>
+            <span>Your Name: </span><input type='text' name='name'><br>
+            <span>Dojo Location: </span><select name="loc">
+                <option value="Seattle">Seattle</option>
+                <option value="Los Angeles">Los Angeles</option>
+                <option value="Silicon Valley">Silicon Valley</option>
+                <option value="Washington, D.C.">Washington, D.C.</option>
+                <option value="Dallas">Dallas</option>
+                <option value="Chicago">Chicago</option>
+            </select><br>
+            <span>Favorite Language: </span><select name="lang">
+                <option value=".NET/C#">.NET/C#</option>
+                <option value="Ruby on Rails">Ruby on Rails</option>
+                <option value="Python">Python</option>
+                <option value="MEAN">MEAN</option>
+                <option value="Java">Java</option>
+                <option value="iOS">iOS</option>
+            </select><br>
+            <span>Comment (optional): </span><textarea name="com" rows="7" cols="47"></textarea><br>
+            <input class="submit" type='submit' value='Create User'>
+        </form>
+    </body>
+</html>

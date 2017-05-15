@@ -1,0 +1,43 @@
+.navbar {
+    margin-bottom: 0;
+    border-radius: 0;
+    text-align: center;
+}
+
+.row.content {
+    height: 450px
+}
+
+.sidenav {
+  padding-top: 20px;
+  background-color: #f1f1f1;
+  height: 100%;
+}
+
+.navbar img {
+    width: 50px;
+    display: inline-block;
+}
+.well img {
+    width: 100px;
+}
+nav h1 {
+    display: inline-block;
+    color: white;
+}
+
+footer {
+    background-color: #555;
+    color: white;
+    padding: 15px;
+}
+
+@media screen and (max-width: 767px) {
+    .sidenav {
+        height: auto;
+        padding: 15px;
+    }
+    .row.content {
+        height:auto;
+    }
+}

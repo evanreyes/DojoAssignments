@@ -25,16 +25,10 @@ users = {
  }
 
 
-print "Students"
-order = 1
-for item in users['Students']:
-    namelength = len(item['first_name']) + len(item['last_name'])
-    print str(order) + " - " + str(item['first_name'].upper()) + " " + str(item['last_name'].upper()) + " - " + str(namelength)
-    order += 1
-
-print "Instructors"
-order = 1
-for item in users['Instructors']:
-    namelength = len(item['first_name']) + len(item['last_name'])
-    print str(order) + " - " + str(item['first_name'].upper()) + " " + str(item['last_name'].upper()) + " - " + str(namelength)
-    order += 1
+for key, value in users.items():
+    print key
+    order = 1
+    for item in users[key]:
+        namelength = len(item['first_name']) + len(item['last_name'])
+        print str(order) + " - " + str(item['first_name'].upper()) + " " + str(item['last_name'].upper()) + " - " + str(namelength)
+        order += 1

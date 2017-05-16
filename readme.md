@@ -1,1 +1,0 @@
-Test documents for Dojo Assignment Repo. Learning how to make a GitHub repo!

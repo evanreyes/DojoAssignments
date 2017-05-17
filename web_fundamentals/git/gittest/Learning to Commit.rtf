@@ -1,0 +1,225 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1504\cocoasubrtf820
+{\fonttbl\f0\fnil\fcharset0 Menlo-Regular;}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue0;\red255\green255\blue255;\red180\green36\blue25;
+\red47\green180\blue29;\red159\green160\blue28;}
+{\*\expandedcolortbl;;\csgray\c0;\csgray\c100000;\cssrgb\c76409\c21698\c12524;
+\cssrgb\c20238\c73898\c14947;\cssrgb\c68468\c68012\c14208;}
+\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f0\fs22 \cf2 \cb3 \CocoaLigature0 Last login: Tue Apr  4 16:57:24 on ttys000\
+Heel-Turn-2:~ evanreyes$ pwd\
+/Users/evanreyes\
+Heel-Turn-2:~ evanreyes$ cd desktop\
+Heel-Turn-2:desktop evanreyes$ mkdir gittest\
+Heel-Turn-2:desktop evanreyes$ cd gittest\
+Heel-Turn-2:gittest evanreyes$ git init\
+Initialized empty Git repository in /Users/evanreyes/Desktop/gittest/.git/\
+Heel-Turn-2:gittest evanreyes$ defaults write com.apple.finder AppleShowAllFiles YES\
+Heel-Turn-2:gittest evanreyes$ touch index.html; touch styles.css; touch aboutme.txt\
+Heel-Turn-2:gittest evanreyes$ git status\
+On branch master\
+\
+Initial commit\
+\
+Untracked files:\
+  (use "git add <file>..." to include in what will be committed)\
+\
+	\cf4 aboutme.txt\cf2 \
+	\cf4 index.html\cf2 \
+	\cf4 styles.css\cf2 \
+\
+nothing added to commit but untracked files present (use "git add" to track)\
+Heel-Turn-2:gittest evanreyes$ git commit -m "initial commit"\
+On branch master\
+\
+Initial commit\
+\
+Untracked files:\
+	\cf4 aboutme.txt\cf2 \
+	\cf4 index.html\cf2 \
+	\cf4 styles.css\cf2 \
+\
+nothing added to commit but untracked files present\
+Heel-Turn-2:gittest evanreyes$ git track aboutme.txt\
+git: 'track' is not a git command. See 'git --help'.\
+\
+Did you mean one of these?\
+	branch\
+	repack\
+Heel-Turn-2:gittest evanreyes$ git --help\
+usage: git [--version] [--help] [-C <path>] [-c name=value]\
+           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\
+           [-p | --paginate | --no-pager] [--no-replace-objects] [--bare]\
+           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]\
+           <command> [<args>]\
+\
+These are common Git commands used in various situations:\
+\
+start a working area (see also: git help tutorial)\
+   clone      Clone a repository into a new directory\
+   init       Create an empty Git repository or reinitialize an existing one\
+\
+work on the current change (see also: git help everyday)\
+   add        Add file contents to the index\
+   mv         Move or rename a file, a directory, or a symlink\
+   reset      Reset current HEAD to the specified state\
+   rm         Remove files from the working tree and from the index\
+\
+examine the history and state (see also: git help revisions)\
+   bisect     Use binary search to find the commit that introduced a bug\
+   grep       Print lines matching a pattern\
+   log        Show commit logs\
+   show       Show various types of objects\
+   status     Show the working tree status\
+\
+grow, mark and tweak your common history\
+   branch     List, create, or delete branches\
+   checkout   Switch branches or restore working tree files\
+   commit     Record changes to the repository\
+   diff       Show changes between commits, commit and working tree, etc\
+   merge      Join two or more development histories together\
+   rebase     Reapply commits on top of another base tip\
+   tag        Create, list, delete or verify a tag object signed with GPG\
+\
+collaborate (see also: git help workflows)\
+   fetch      Download objects and refs from another repository\
+   pull       Fetch from and integrate with another repository or a local branch\
+   push       Update remote refs along with associated objects\
+\
+'git help -a' and 'git help -g' list available subcommands and some\
+concept guides. See 'git help <command>' or 'git help <concept>'\
+to read about a specific subcommand or concept.\
+Heel-Turn-2:gittest evanreyes$ git add aboutme.txt\
+Heel-Turn-2:gittest evanreyes$ git status\
+On branch master\
+\
+Initial commit\
+\
+Changes to be committed:\
+  (use "git rm --cached <file>..." to unstage)\
+\
+	\cf5 new file:   aboutme.txt\cf2 \
+\
+Untracked files:\
+  (use "git add <file>..." to include in what will be committed)\
+\
+	\cf4 index.html\cf2 \
+	\cf4 styles.css\cf2 \
+\
+Heel-Turn-2:gittest evanreyes$ git add index.html\
+Heel-Turn-2:gittest evanreyes$ git add styles.css\
+Heel-Turn-2:gittest evanreyes$ git status\
+On branch master\
+\
+Initial commit\
+\
+Changes to be committed:\
+  (use "git rm --cached <file>..." to unstage)\
+\
+	\cf5 new file:   aboutme.txt\cf2 \
+	\cf5 new file:   index.html\cf2 \
+	\cf5 new file:   styles.css\cf2 \
+\
+Heel-Turn-2:gittest evanreyes$ git commit -m "initial commit"\
+[master (root-commit) 7a6363a] initial commit\
+ 3 files changed, 0 insertions(+), 0 deletions(-)\
+ create mode 100644 aboutme.txt\
+ create mode 100644 index.html\
+ create mode 100644 styles.css\
+Heel-Turn-2:gittest evanreyes$ git status\
+On branch master\
+nothing to commit, working tree clean\
+Heel-Turn-2:gittest evanreyes$ git status\
+On branch master\
+Changes not staged for commit:\
+  (use "git add <file>..." to update what will be committed)\
+  (use "git checkout -- <file>..." to discard changes in working directory)\
+\
+	\cf4 modified:   aboutme.txt\cf2 \
+\
+no changes added to commit (use "git add" and/or "git commit -a")\
+Heel-Turn-2:gittest evanreyes$ git commit -m "updated aboutMe"\
+On branch master\
+Changes not staged for commit:\
+	\cf4 modified:   aboutme.txt\cf2 \
+\
+no changes added to commit\
+Heel-Turn-2:gittest evanreyes$ git add aboutme.txt\
+Heel-Turn-2:gittest evanreyes$ git status\
+On branch master\
+Changes to be committed:\
+  (use "git reset HEAD <file>..." to unstage)\
+\
+	\cf5 modified:   aboutme.txt\cf2 \
+\
+Heel-Turn-2:gittest evanreyes$ git commit -m "updated aboutme.txt"\
+[master 3e02adb] updated aboutme.txt\
+ 1 file changed, 3 insertions(+)\
+Heel-Turn-2:gittest evanreyes$ git add aboutme.txt\
+Heel-Turn-2:gittest evanreyes$ git commit -m "added favorite movie to aboutme.txt"\
+[master 6071783] added favorite movie to aboutme.txt\
+ 1 file changed, 2 insertions(+), 1 deletion(-)\
+Heel-Turn-2:gittest evanreyes$ git log\
+\cf6 commit 6071783d60a7dcf72b2f48c4c71f05216280e053\cf2 \
+Author: evanreyes <evanreyes@me.com>\
+Date:   Tue Apr 4 18:21:13 2017 -0700\
+\
+    added favorite movie to aboutme.txt\
+\
+\cf6 commit 3e02adbcc14dc9a19ac6c01c3faffe7c4d2611c0\cf2 \
+Author: evanreyes <evanreyes@me.com>\
+Date:   Tue Apr 4 18:20:29 2017 -0700\
+\
+    updated aboutme.txt\
+\
+\cf6 commit 7a6363ab3bf6c830ad84ee5c0596215f5d31c3a7\cf2 \
+Author: evanreyes <evanreyes@me.com>\
+Date:   Tue Apr 4 18:16:55 2017 -0700\
+\
+    initial commit\
+Heel-Turn-2:gittest evanreyes$ git revert -n HEAD\
+Heel-Turn-2:gittest evanreyes$ git add aboutme.txt\
+Heel-Turn-2:gittest evanreyes$ git status\
+On branch master\
+You are currently reverting commit 6071783.\
+  (all conflicts fixed: run "git revert --continue")\
+  (use "git revert --abort" to cancel the revert operation)\
+\
+Changes to be committed:\
+  (use "git reset HEAD <file>..." to unstage)\
+\
+	\cf5 modified:   aboutme.txt\cf2 \
+\
+Heel-Turn-2:gittest evanreyes$ git commit -m "changed favorite movie to favorite book"\
+[master 85d0892] changed favorite movie to favorite book\
+ 1 file changed, 1 insertion(+), 1 deletion(-)\
+Heel-Turn-2:gittest evanreyes$ git status\
+On branch master\
+nothing to commit, working tree clean\
+Heel-Turn-2:gittest evanreyes$ git log\
+\cf6 commit 85d0892c2a83e2b78627c33ec49effbb1d65041e\cf2 \
+Author: evanreyes <evanreyes@me.com>\
+Date:   Tue Apr 4 18:23:34 2017 -0700\
+\
+    changed favorite movie to favorite book\
+\
+\cf6 commit 6071783d60a7dcf72b2f48c4c71f05216280e053\cf2 \
+Author: evanreyes <evanreyes@me.com>\
+Date:   Tue Apr 4 18:21:13 2017 -0700\
+\
+    added favorite movie to aboutme.txt\
+\
+\cf6 commit 3e02adbcc14dc9a19ac6c01c3faffe7c4d2611c0\cf2 \
+Author: evanreyes <evanreyes@me.com>\
+Date:   Tue Apr 4 18:20:29 2017 -0700\
+\
+    updated aboutme.txt\
+\
+\cf6 commit 7a6363ab3bf6c830ad84ee5c0596215f5d31c3a7\cf2 \
+Author: evanreyes <evanreyes@me.com>\
+Date:   Tue Apr 4 18:16:55 2017 -0700\
+\
+    initial commit\
+Heel-Turn-2:gittest evanreyes$ \
+}

@@ -47,7 +47,9 @@
                 <input type="submit" value="Reset Gold">
             </form>
             <h2>Gold Log:</h2>
-            <p>{{ log }}</p>
+            <p>{% autoescape false %}
+                {{ session['log'] }}
+                {% endautoescape %}</p>
         </div>
     </body>
 </html>

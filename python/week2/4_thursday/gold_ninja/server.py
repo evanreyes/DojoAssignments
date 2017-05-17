@@ -1,51 +1,49 @@
 from flask import Flask, session, render_template, request, redirect
 import random
+import datetime
 app = Flask(__name__)
 app.secret_key = 'ThisIsSecret'
 
 
 def initGold():
-    if 'gold' in session:
+    if ('gold' and 'log') in session:
         return
     else:
         session['gold'] = 0
+        session['log'] = ''
         return
 
 @app.route('/')
 def index():
-    print session.items()
     initGold()
     return render_template("index.html")
 
 @app.route('/process_money', methods=['POST'])
 def processMoney():
-    log = []
     if request.form['value'] == 'farm':
-        result = ''
-        gold = int(random.randrange(10, 21))
+        gold = int(random.randrange(5, 11))
         session['gold'] += gold
-        result = 'You got ' + str(gold) + ' gold from the ' + str(request.form['value']) + '.'
-        log.append(result)
-        print log
+        session['log'] += 'You earned ' + str(gold) + ' gold from the farm on ' + ('{:%m-%d-%Y}'.format(datetime.datetime.now())) + ' at ' + ('{:%H:%M:%S}'.format(datetime.datetime.now())) + '.<br>'
         print session.items()
         return redirect('/')
     elif request.form['value'] == 'cave':
-        session['log'] = ''
         gold = int(random.randrange(5, 11))
         session['gold'] += gold
-        session['log'] += 'You got ' + str(gold) + ' gold from the ' + str(request.form['value']) + '.'
+        session['log'] += 'You earned ' + str(gold) + ' gold from the cave on ' + ('{:%m-%d-%Y}'.format(datetime.datetime.now())) + ' at ' + ('{:%H:%M:%S}'.format(datetime.datetime.now())) + '.<br>'
         return redirect("/")
     elif request.form['value'] == 'house':
-        session['log'] = ''
         gold = int(random.randrange(2, 6))
         session['gold'] += gold
-        session['log'] += 'You got ' + str(gold) + ' gold from the ' + str(request.form['value']) + '.'
+        session['log'] += 'You earned ' + str(gold) + ' gold from the house on ' + ('{:%m-%d-%Y}'.format(datetime.datetime.now())) + ' at ' + ('{:%H:%M:%S}'.format(datetime.datetime.now())) + '.<br>'
         return redirect("/")
     elif request.form['value'] == 'casino':
-        session['log'] = ''
         gold = int(random.randrange(-50, 51))
         session['gold'] += gold
-        session['log'] += 'You got ' + str(gold) + ' gold from the ' + str(request.form['value']) + '.'
+        if gold > 0:
+            session['log'] += 'You won ' + str(gold) + ' gold at the casino on ' + ('{:%m-%d-%Y}'.format(datetime.datetime.now())) + ' at ' + ('{:%H:%M:%S}'.format(datetime.datetime.now())) + '.<br>'
+        else:
+            gold = abs(gold)
+            session['log'] += 'You lost ' + str(gold) + ' gold at the casino on ' + ('{:%m-%d-%Y}'.format(datetime.datetime.now())) + ' at ' + ('{:%H:%M:%S}'.format(datetime.datetime.now())) + '.<br>'
         return redirect("/")
     elif request.form['value'] == 'reset':
         if ('gold' and 'log') in session:

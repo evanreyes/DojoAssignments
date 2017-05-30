@@ -1,0 +1,15 @@
+* {
+    font-family: sans-serif;
+}
+
+#info {
+    border: 2px solid black;
+    background-color: lightblue;
+    padding: 5px 10px 10px 10px;
+    height: 250px;
+    width: 300px;
+}
+
+p {
+    margin: 10px 0px;
+}

@@ -1,0 +1,16 @@
+
+<html>
+    <head>
+        <title>Submitted Form</title>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/users.css') }}">
+    </head>
+    <body>
+        <h1>Submitted Info</h1>
+        <div id="info">
+            <p>Your Name: {{ name }}</p>
+            <p>Dojo Location: {{ loc }}</p>
+            <p>Favorite Language: {{ lang }}</p>
+            <p>Comment: {{ com }}</p>
+        </div>
+    </body>
+</html>

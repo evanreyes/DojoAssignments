@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <title>Full Friends</title>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/normalize.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    </head>
+    <body>
+        <!-- {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for message in messages %}
+                    <p class="success_message">{{message}}</p>
+                {% endfor %}
+            {% endif %}
+        {% endwith %} -->
+        <form action='/friends/<id>/edit' method='POST'>
+            {% for friend in friends: %}
+                <label for="first_name">First Name: <input type="text" name="first_name" value="{{ first_name }}"></label><br>
+                <label for="last_name">Last Name: <input type="text" name="last_name" value="{{ last_name }}"></label><br>
+                <label for="first_name">Email: <input type="text" name="email" value="{{ email }}"></label><br>
+                <input type="hidden" name="id" value="{{ id }}">
+                <input type="hidden" name="update" value="update">
+                <input formaction="/friends/<id>" type="submit" value="Update">
+            {% endfor %}
+        </form>
+        <form action='/' method='POST'>
+            <input type="hidden" name="goback" value="goback">
+            <input type="submit" value="Go Back">
+        </form>
+    </body>
+</html>

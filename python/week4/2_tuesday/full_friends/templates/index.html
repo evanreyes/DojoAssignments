@@ -1,0 +1,41 @@
+<html>
+    <head>
+        <title>Full Friends</title>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/normalize.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    </head>
+    <body>
+
+        <h1>Full Friends List</h1>
+        <div class="friends_list">
+            {% for friend in friends: %}
+                {{friend['first_name']}} {{ friend['last_name'] }} - {{ friend['email'] }}
+                    <form method="post">
+                        <input type="hidden" name="first_name" value="{{ friend['first_name'] }}">
+                        <input type="hidden" name="last_name" value="{{ friend['last_name'] }}">
+                        <input type="hidden" name="email" value="{{ friend['email'] }}">
+                        <input type="hidden" name="edit" value="{{ friend['id'] }}">
+                        <input formaction="/friends/{{ friend['id'] }}/edit" type="submit" value="Edit">
+                    </form>
+                    <form method="post">
+                        <input type="hidden" name="delete" value="{{ friend['id'] }}">
+                        <input formaction="/friends/{{ friend['id'] }}/delete" type="submit" value="Delete">
+                    </form><br>
+            {% endfor %}
+        </div>
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    {% for message in messages %}
+                        <p class="error_message">{{message}}</p>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+        <form action='/friends' method='POST'>
+            <label for="first_name">First Name: <input type="text" name="first_name" id="first_name"></label><br>
+            <label for="last_name">Last Name: <input type="text" name="last_name" id="last_name"></label><br>
+            <label for="email">Email: <input type="text" name="email" id="email"></label><br>
+            <input type="hidden" name="value" value="submit">
+            <input type="submit" value="Add Friend">
+        </form>
+    </body>
+</html>

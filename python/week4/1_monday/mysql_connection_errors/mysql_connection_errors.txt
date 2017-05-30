@@ -1,0 +1,7 @@
+(2003, "Can't connect to MySQL server on '127.0.0.1' (61)")
+
+(1045, "Access denied for user 'root'@'localhost' (using password: YES)")
+
+(1045, "Access denied for user 'toor'@'localhost' (using password: YES)")
+
+NameError: global name 'bd' is not defined

@@ -1,0 +1,43 @@
+<html>
+    <head>
+        <title>The Wall</title>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/normalize.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    </head>
+    <body>
+    <div class="header col-s-12 col-m-12 col-l-12">
+        <h1>Welcome to the Coding Dojo Wall</h1>
+        <hr>
+    </div>
+    <div class="flash col-s-12 col-m-6 col-l-6">
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for message in messages %}
+                    <p class="message">{{ message }}</p>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+    </div>
+    <div class="reg_login">
+        <div class="window">
+            <h1>Register</h1>
+            <form action='/register' method='POST'>
+                <label for="first_name">First Name: </label><input type="text" name="first_name"><br>
+                <label for="last_name">Last Name: </label><input type="text" name="last_name"><br>
+                <label for="email">Email: </label><input type="text" name="email"><br>
+                <label for="password">Password: </label><input type="password" name="pw"><br>
+                <label for="password">Confirm Password: </label><input type="password" name="pw_confirm"><br>
+                <input class="button" type="submit" value="Register">
+            </form><br><br>
+        </div>
+        <div class="window">
+            <h1>Log In</h1>
+            <form action='/login' method='POST'>
+                <label for="email">Email: </label><input type="text" name="email_login"><br>
+                <label for="password">Password: </label><input type="password" name="password_login"><br>
+                <input class="button" type="submit" value="Log In">
+            </form>
+        </div>
+    </div>
+    </body>
+</html>

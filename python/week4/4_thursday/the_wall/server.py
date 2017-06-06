@@ -10,13 +10,13 @@ bcrypt = Bcrypt(app)
 app.secret_key = "TheWall"
 mysql = MySQLConnector(app,'the_wall')
 
-@app.route('/', methods=['POST', 'GET'])
+@app.route('/')
 def index():
-    if session['logged_in'] == None:
-        session['logged_in'] = False
-    elif session['logged_in'] == True:
-        return render_template("wall.html")
-    if session['first_name'] == None:
+    if 'logged_in' in session:
+        session['logged_in'] = ''
+
+        return redirect('/wall')
+
         session['first_name'] = ''
     if session['last_name'] == None:
         session['last_name'] = ''
@@ -24,7 +24,6 @@ def index():
         session['email'] = ''
     if session['user_id'] == None:
         session['user_id'] = ''
-    print session
     return render_template('index.html')
 
 @app.route('/register', methods=['POST'])

@@ -1,12 +1,6 @@
 from django.shortcuts import render, redirect
 import random, string
 
-def check_attempts():
-    if 'attempts' in request.session == True:
-        return redirect('/')
-    else:
-        request.session['attempts'] = 1
-
 def index(request):
     if request.method == "POST":
         gen_word = ''.join([random.choice(string.ascii_uppercase + string.digits) for i in range(14)])
@@ -14,12 +8,11 @@ def index(request):
             request.session['attempts'] += 1
         else:
             request.session['attempts'] = 1
-
         random_word = {
             'word': gen_word
         }
-
         return render(request, 'word_generator/index.html', random_word)
+
     else:
         return render(request, 'word_generator/index.html')
 

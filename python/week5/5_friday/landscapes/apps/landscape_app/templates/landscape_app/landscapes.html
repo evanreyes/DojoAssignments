@@ -1,0 +1,22 @@
+
+<html>
+    <head>
+        <title>Landscapes</title>
+        {% load staticfiles %}
+        <link rel="stylesheet" type="text/css" href="{% static "/landscape_app/css/normalize.css" %}">
+        <link rel="stylesheet" type="text/css" href="{% static "/landscape_app/css/style.css" %}">
+    </head>
+    <body>
+        {% if id == 'snow' %}
+			<img src="{% static snow %}" alt="snow">
+		{% elif id == 'desert' %}
+			<img src="{% static desert %}" alt="desert">
+		{% elif id == 'forest' %}
+			<img src="{% static forest %}" alt="forest">
+		{% elif id == 'vineyard' %}
+			<img src="{% static vineyard %}" alt="vineyard">
+		{% elif id == 'tropical' %}
+			<img src="{% static tropical %}" alt="tropical">
+		{% endif %}
+    </body>
+</html>

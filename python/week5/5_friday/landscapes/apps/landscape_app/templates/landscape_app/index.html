@@ -1,0 +1,20 @@
+
+<html>
+    <head>
+        <title>Landscapes</title>
+        {% load staticfiles %}
+        <link rel="stylesheet" type="text/css" href="{% static "/landscape_app/css/normalize.css" %}">
+        <link rel="stylesheet" type="text/css" href="{% static "/landscape_app/css/style.css" %}">
+    </head>
+    <body>
+        <h1>Welcome!</h1>
+        <h1>Enter any number 1-50 as a URL parameter.</h1>
+        <h3>For example: "localhost:8000/32"</h3>
+
+        {% if messages %}
+            {% for alert in messages %}
+                <p>{{ alert }}</p>
+            {% endfor %}
+        {% endif %}
+    </body>
+</html>

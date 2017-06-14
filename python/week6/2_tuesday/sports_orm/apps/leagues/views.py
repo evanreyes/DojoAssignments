@@ -30,11 +30,3 @@ def make_data(request):
 	team_maker.gen_players(200)
 
 	return redirect("index")
-
-def alldata(request):
-	context = {
-		"leagues": League.objects.all(),
-		"teams": Team.objects.all(),
-		"players": Player.objects.all(),
-	}
-	return render(request, "leagues/alldata.html", context)

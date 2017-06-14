@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Username Validation</title>
+        {% load staticfiles %}
+        <link rel="stylesheet" type="text/css" href="{% static "/user_val/css/normalize.css" %}">
+        <link rel="stylesheet" type="text/css" href="{% static "/user_val/css/style.css" %}">
+    </head>
+    <body>
+            <h1>Are you sure you want to delete the following user?</h1>
+        {% for username in usernames %}
+        <table>
+            <tr>
+                <td>{{ username.username }}</td>
+                <td>{{ username.created_at }}</td>
+            </tr>
+        </table>
+        <form method="post">
+            {% csrf_token %}
+            <input class="confirm" type="submit" formaction="/success" value="No, go back">
+            <input class="confirm" type="submit" formaction="/usernames/destroy/{{ username.id }}" value="Yes, destroy it">
+        </form>
+        {% endfor %}
+    </body>
+</html>

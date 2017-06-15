@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Login and Registration</title>
+        {% load staticfiles %}
+        <link rel="stylesheet" type="text/css" href="{% static "/login_app/css/normalize.css" %}">
+        <link rel="stylesheet" type="text/css" href="{% static "/login_app/css/style.css" %}">
+    </head>
+    <body>
+        <div class="flash col-s-12 col-m-6 col-l-6">
+                {% if messages %}
+                    {% for message in messages %}
+                        <p class="message">{{ message }}</p>
+                    {% endfor %}
+                {% endif %}
+        </div>
+        <div class="reg_login">
+            <div class="window">
+                <h1>Register</h1>
+                <form action='{% url 'login_app:register' %}' method='POST'>
+                    {% csrf_token %}
+                    <label for="first_name">First Name: </label><input type="text" name="first_name"><br>
+                    <label for="last_name">Last Name: </label><input type="text" name="last_name"><br>
+                    <label for="email">Email: </label><input type="text" name="email"><br>
+                    <label for="password">Password: </label><input type="password" name="pw"><br>
+                    <label for="password">Confirm Password: </label><input type="password" name="pw_confirm"><br>
+                    <button type="submit" name="login" value="register" >Register</button>
+                </form><br><br>
+            </div>
+            <div class="window">
+                <h1>Log In</h1>
+                <form action='{% url 'login_app:login' %}' method='POST'>
+                    {% csrf_token %}
+                    <label for="email">Email: </label><input type="text" name="email_login"><br>
+                    <label for="password">Password: </label><input type="password" name="password_login"><br>
+                    <button type="submit" name="login" value="login" >Log In</button>
+                </form>
+            </div>
+        </div>
+        </body>
+</html>

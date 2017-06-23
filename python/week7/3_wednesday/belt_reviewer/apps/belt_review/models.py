@@ -131,7 +131,6 @@ class BookManager(models.Manager):
                 author = Author.objects.get(name=author_list)
         else:
             if validBook == True and validAuthor == True:
-                print "Review created"
                 Book.objects.create(title=title, author=author)
                 book_add = Book.objects.get(title=title)
                 Review.objects.create(review=review, rating=rating, user=user, book=book_add)

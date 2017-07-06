@@ -12,7 +12,6 @@ console.log(first_variable);
     // Interpreted
 var first_variable;
 function firstFunc() {
-    var first_variable
     first_variable = "Not anymore!!!";
     console.log(first_variable);
     }
@@ -60,7 +59,6 @@ console.log(new_word);
     // Interpreted
 var new_word;
 function lastFunc() {
-    var new_word
     new_word = "old";
     }
 new_word = "NEW!";

@@ -7,14 +7,37 @@
         // Part I
         // Create a function called star_string() that takes a number and returns a string of that many *. For example:
         function star_string(num) {
-            let stars = '';                     // We start by creating an empty string that we will populate with stars
-            for (var i = 1; i <= num; i++) {    // This for loop will create a star based on the num argument we pass in
-                stars += '*';                   // This will concatenate one star to the same string each time we increment toward num
+            let stars = '';                         // We start by creating an empty string that we will populate with stars
+            for (var i = 1; i <= num; i++) {        // This for loop will create a star based on the num argument we pass in
+                stars += '*';                       // This will concatenate one star to the same string each time we increment toward num
             }
-            console.log(stars);                 // Show me the stars!
+            console.log(stars);                     // Show me the stars!
         }
-        star_string(10)                         // Run it!
+        star_string(10)                             // Run it!
 
+        // Part II
+        // Create a function called draw_stars() that takes an array of numbers and prints out *.
+        function draw_stars(arr) {
+            for (var j = 0; j < arr.length; j++) {              // Simple for loop to iterate through the array
+                if (typeof arr[j] == 'string') {                // Check to see if the array item is a string. If so...
+                    let letters = '';                           // Similar to drawing stars, we will make an empty string for letters
+                    for (var k = 0; k < arr[j].length; k++) {   // This loop is intended to write a letter for each letter in the string (i.e. its length)
+                        letters += arr[j][0];                   // Since we only want the first letter, we write index 0 each time
+                        }
+                        console.log(letters.toLowerCase());     // Log it
+                    }
+                else if (typeof arr[j] == 'number') {           // If it's a number, refer back to star_string and print stars
+                    star_string(arr[j]);
+                }
+            }
+        }
+        let x = [4, 6, 1, 3, 5, 7, 25];              // Declare the array variable
+        draw_stars(x);                               // Run it!
+
+        // Part III
+        // Modify the function above. Allow an array containing integers and strings to be passed to the draw_stars() function. When a string is passed, instead of displaying *, display the first letter of the string according to the example below. You may use the .lower() string method for this part.
+        let y = [4, "Tom", 1, "Michael", 5, 7, "Jimmy Smith"];  // Declare a new array variable
+        draw_stars(y);                                          // Run it!
         </script>
     </head>
     <body>

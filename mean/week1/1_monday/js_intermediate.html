@@ -8,7 +8,7 @@
         // Create a function called star_string() that takes a number and returns a string of that many *. For example:
         function star_string(num) {
             let stars = '';                         // We start by creating an empty string that we will populate with stars
-            for (var i = 1; i <= num; i++) {        // This for loop will create a star based on the num argument we pass in
+            for (let i = 1; i <= num; i++) {        // This for loop will create a star based on the num argument we pass in
                 stars += '*';                       // This will concatenate one star to the same string each time we increment toward num
             }
             console.log(stars);                     // Show me the stars!
@@ -21,7 +21,7 @@
             for (var j = 0; j < arr.length; j++) {              // Simple for loop to iterate through the array
                 if (typeof arr[j] == 'string') {                // Check to see if the array item is a string. If so...
                     let letters = '';                           // Similar to drawing stars, we will make an empty string for letters
-                    for (var k = 0; k < arr[j].length; k++) {   // This loop is intended to write a letter for each letter in the string (i.e. its length)
+                    for (let k = 0; k < arr[j].length; k++) {   // This loop is intended to write a letter for each letter in the string (i.e. its length)
                         letters += arr[j][0];                   // Since we only want the first letter, we write index 0 each time
                         }
                         console.log(letters.toLowerCase());     // Log it

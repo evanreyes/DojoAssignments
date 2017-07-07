@@ -11,7 +11,7 @@
             };
             if (x instanceof Array) {
                 newarr = []
-                for (var i = 0; i < x.length; i++) {
+                for (let i = 0; i < x.length; i++) {
                     newarr.push(x[i] * y)
                 }
                 return newarr
@@ -21,7 +21,7 @@
             };
             if (typeof x == 'string' && typeof y == 'number') {
                 output = ''
-                for (var j = 1; j <= y; j ++) {
+                for (let j = 1; j <= y; j ++) {
                     output += x;
                 }
                 console.log(output)

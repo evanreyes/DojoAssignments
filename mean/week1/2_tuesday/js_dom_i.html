@@ -18,7 +18,7 @@
         </ul>
         <script>
             function appendList(array, id){                                     // Accept an array and an ID
-                for (var i = 0; i < array.length; i++) {                        // Iterate through each array item
+                for (let i = 0; i < array.length; i++) {                        // Iterate through each array item
                     let new_li = document.createElement("li");                  // Create a tag for each item we will append
                     new_li.innerHTML = array[i];                                // Toss the array index in as HTML
                     document.getElementById(target_id).appendChild(new_li);     // Append our newly created HTML string into the existing "main" element
@@ -26,7 +26,7 @@
             };
 
             function superAppend(array, element, id){                           // SuperAppend! Now we can choose the type of tag by passing in an lement
-                for (var i = 0; i < array.length; i++) {
+                for (let i = 0; i < array.length; i++) {
                     let new_li = document.createElement(String(element));       // This is the only line that is different: it takes in an element argument
                     new_li.innerHTML = array[i];                                // that we convert to a string so that our append method understands it
                     document.getElementById(target_id2).appendChild(new_li);

@@ -73,10 +73,10 @@ var person = {
     name: "Evan",
     distance_traveled: 0,
     say_name: function() {
-        return "It's "+ person.name + "!";
+        console.log(person.name);
     },
     say_something: function(thing) {
-        return person.name + "says: " + "'" + thing + ".'";
+        console.log('${person.name} says: ${thing}');
     },
     walk: function() {
         console.log(person.name + " is walking and has journeyed for " + person.distance_traveled + " travel units.");

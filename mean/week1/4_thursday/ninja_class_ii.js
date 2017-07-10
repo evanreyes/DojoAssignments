@@ -27,15 +27,24 @@ function Ninja(name) {
     };
 
     this.punch = function(target) {
-        target.updateHealth(5);
-        console.log(target.name + " was punched by " + this.name + " and lost 5 health!");
-        return this;
+        if (target instanceof Ninja) {
+            target.updateHealth(5);
+            console.log(target.name + " was punched by " + this.name + " and lost 5 health!");
+        }
+        else {
+            console.log("You can't punch a non-Ninja!")
+        }
     }
 
     this.kick = function(target) {
-        let kick_damage = 15 * Number(strength);
-        target.updateHealth(kick_damage);
-        console.log(target.name + " was punched by " + this.name + " and lost " + kick_damage + " health!");
+        if (target instanceof Ninja) {
+            let kick_damage = 15 * Number(strength);
+            target.updateHealth(kick_damage);
+            console.log(target.name + " was punched by " + this.name + " and lost " + kick_damage + " health!");
+        }
+        else {
+            console.log("You can't kick a non-Ninja!")
+        }
     }
 }
 

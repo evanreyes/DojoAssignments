@@ -2,7 +2,6 @@ function Deck() {
     this.deck = [];
     this.suit = ['Hearts', 'Spades', 'Clubs', 'Diamonds'];
     this.value = ['Two', 'Three', 'Four', 'Five', 'Six', 'Seven', 'Eight', 'Nine', 'Ten', 'Jack', 'Queen', 'King', 'Ace'];
-    this.card = [];
 }
 
 // When this function runs, it serves to reset the deck, meaning no separate reset function is necessary
@@ -29,9 +28,10 @@ Deck.prototype.shuffle = function() {
 
 // Put a card from a random index into the empty "card" array we instantiated for the Deck object
 Deck.prototype.deal = function() {
-    this.card.push(this.deck[Math.floor(Math.random() * this.deck.length)]);
-    this.deck.splice(this.card, 1);
-    return this.card;
+    let random_index = Math.floor(Math.random() * this.deck.length);
+    const card = this.deck[random_index];
+    this.deck.splice(random_index, 1);
+    return card;
 }
 
 // A player has a name, and an empty hand
@@ -41,8 +41,11 @@ function Player(name) {
 }
 
 // Grab the card from the deal function and put it into the player's hand array
-Player.prototype.dealHand = function(cards) {
-    this.hand = cards;
+Player.prototype.dealHand = function(numCards, deck) {
+    for (let i = 1; i <= numCards; i++) {
+        this.hand.push(deck.deal());
+    }
+    console.log(this.hand);
     return this;
 }
 
@@ -50,6 +53,5 @@ Player.prototype.dealHand = function(cards) {
 let deck1 = new Deck()
 let player1 = new Player("Phil Ivey")
 deck1.assembleDeck()
-player1.dealHand(deck1.deal()).dealHand(deck1.deal()).dealHand(deck1.deal()).dealHand(deck1.deal())
 console.log(player1.name)
-console.log(player1.hand)
+player1.dealHand(4, deck1)

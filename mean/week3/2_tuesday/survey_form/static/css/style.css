@@ -1,0 +1,15 @@
+html {
+    margin-top: 5%;
+    text-align: center;
+}
+
+form, .info {
+    border: 1px solid black;
+    width: 25%;
+    margin: 0 auto;
+    padding: 1%;
+}
+
+#back {
+    border: 0px;
+}

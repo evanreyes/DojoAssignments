@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Survey Form</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+        <!-- Optional theme -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
+
+        <!-- Custom stylesheet -->
+        <link rel="stylesheet" type="text/css" href="/css/style.css">
+
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" ></script>
+    </head>
+    <body>
+        <h1>Submit Your Information</h1>
+        <form action='/results' method='post'>
+            <span>Your Name: </span><input type='text' name='name'><br>
+            <span>Dojo Location: </span><select name="location">
+                <option value="Seattle">Seattle</option>
+                <option value="Los Angeles">Los Angeles</option>
+                <option value="Silicon Valley">Silicon Valley</option>
+                <option value="Washington, D.C.">Washington, D.C.</option>
+                <option value="Dallas">Dallas</option>
+                <option value="Chicago">Chicago</option>
+            </select><br>
+            <span>Favorite Language: </span><select name="language">
+                <option value=".NET/C#">.NET/C#</option>
+                <option value="Ruby on Rails">Ruby on Rails</option>
+                <option value="Python">Python</option>
+                <option value="MEAN">MEAN</option>
+                <option value="Java">Java</option>
+                <option value="iOS">iOS</option>
+            </select><br>
+            <span>Comment (optional): </span><br><textarea name="comments" rows="4"></textarea><br>
+            <button type="submit" class="btn btn-default">Submit</button>
+        </form>
+    </body>
+</html>

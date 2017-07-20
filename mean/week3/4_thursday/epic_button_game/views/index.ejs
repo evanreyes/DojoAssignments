@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Epic Button Game</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+        <!-- Optional theme -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
+
+        <!-- Custom stylesheet -->
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" ></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script type ="text/javascript" src="/socket.io/socket.io.js"></script>
+        <script src="/js/javascript.js"></script>
+    </head>
+    <body>
+        <div class="col-sm-6 col-sm-offset-3">
+            <h1>Welcome to the Epic Button Game!</h1>
+            <div class="form">
+                <h3>The button has been pushed <span class="count">0</span> times!</h3>
+                <h6>Push the button to update the count!</h6>
+                <button class="epic" type="submit" name="epic">I am the Epic Button</button>
+            </div>
+            <button class="reset" type="submit" name="reset">Reset the epicness</button>
+        </div>
+    </body>
+</html>

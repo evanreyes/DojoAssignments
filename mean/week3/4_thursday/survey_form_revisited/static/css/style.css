@@ -1,0 +1,15 @@
+html {
+    margin-top: 5%;
+    text-align: center;
+}
+
+form {
+    border: 1px solid black;
+    padding: 1%;
+}
+
+.message {
+    border: 1px solid black;
+    padding: 1%;
+    background-color: #B6D7A8;
+}

@@ -24,6 +24,8 @@ let count = 0;
 io.sockets.on('connection', function (socket) {
     console.log(`Client/socket is connected on ${ socket.id }`);
 
+    socket.emit('update', count);
+
     socket.on('epic', () => {
 		update(++count);
         console.log(`Epic button was clicked, current count is ${ count }`);

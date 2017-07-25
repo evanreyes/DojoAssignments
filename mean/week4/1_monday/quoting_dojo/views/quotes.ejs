@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Quoting Dojo</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+        <!-- Optional theme -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
+
+        <!-- Custom stylesheet -->
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" ></script>
+    </head>
+    <body>
+        <div class="quotes col-sm-4 col-sm-offset-4">
+            <h1>Here are the quotes!</h4>
+            <% for (var x in quotes) { %>
+                <p>"<%= quotes[x].quote %>"<p>
+                    --<%= quotes[x].name %> at <%= quotes[x].created_at %></p><hr>
+            <% } %>
+            <form action="/" method="get">
+                <button type="submit"class="btn btn-default">Back</button>
+            </form>
+        </div>
+    </body>
+</html>

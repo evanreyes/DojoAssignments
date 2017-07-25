@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Quoting Dojo</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+        <!-- Optional theme -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
+
+        <!-- Custom stylesheet -->
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" ></script>
+    </head>
+    <body>
+        <h1>Welcome to Quoting Dojo!</h1>
+        <div class="the_form col-sm-4 col-sm-offset-4">
+            <form action="/quotes">
+                Who said it?
+                <input type="text" name="name"><br><br>
+                What did they say?
+                <textarea type="test" rows="5" cols="20" name="quote"></textarea><br><br>
+                <button type="submit" formmethod="post" class="btn btn-default pull-left">Add my quote</button>
+                <button type="submit" formmethod="get" class="btn btn-default pull-right">Just see the quotes</button>
+            </form>
+        </div>
+    </body>
+</html>

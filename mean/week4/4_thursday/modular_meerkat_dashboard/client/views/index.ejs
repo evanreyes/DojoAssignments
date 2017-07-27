@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Meerkat Dashboard</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+        <!-- Optional theme -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
+
+        <!-- Custom stylesheet -->
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+    </head>
+    <body>
+        <div class="row">
+            <h1>Welcome to the Meerkat Dashboard!</h1>
+            <img src="img/<%= rand %>.jpg">
+        </div>
+        <div class="meerkats col-sm-4 col-sm-offset-4">
+            <h3>Meet the meerkats!</h3>
+            <h6>Click on a name for more information</h6>
+             <% for (var x in meerkats) { %>
+                <h4><a href="/meerkats/<%= meerkats[x].id %>"><%= meerkats[x].name %></a></h4>
+             <% } %>
+             <a href="/meerkats/new">Add a new meerkat to the pack</a>
+        </div>
+    </body>
+</html>

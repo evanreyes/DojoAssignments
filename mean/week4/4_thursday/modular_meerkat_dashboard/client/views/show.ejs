@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Meerkat Dashboard</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+        <!-- Optional theme -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
+
+        <!-- Custom stylesheet -->
+        <link rel="stylesheet" type="text/css" href="/css/style.css">
+    </head>
+    <body>
+        <div class="row">
+            <h1>Welcome to the Meerkat Dashboard!</h1>
+            <img src="/img/<%= rand %>.jpg">
+        </div>
+        <div class="meerkats col-sm-4 col-sm-offset-4">
+            <h3>Meet this meerkat!</h3>
+                <h4><%= meerkat.name %></h4>
+                <h6>Age: <%= meerkat.age %></h6>
+                <h6>Speed: <%= meerkat.speed %></h6>
+                <h6>Favorite Food: <%= meerkat.food %></h6>
+            <form method="get">
+                <input type="submit" formaction="/meerkats/edit/<%= meerkat.id %>" value="Edit this meerkat">
+                <br>-or-</br>
+                <input type="submit" formaction="/meerkats/new" value="Add a new meerkat to the pack">
+            </form>
+        </div>
+        <div class="row">
+            <section class="col-sm-4 col-sm-offset-4">
+                <br><a href="/">Return to the pack den</a>
+            </section>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,13 @@
+html {
+    text-align: center;
+}
+
+.the_form, .meerkats {
+    border: 1px solid black;
+    padding: 1% 0% 2% 0%;
+}
+
+img {
+    width: 35%;
+    margin: 1% 0% 2% 0%;
+}

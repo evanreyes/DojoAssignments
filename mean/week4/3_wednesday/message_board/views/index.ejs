@@ -31,20 +31,20 @@
             </form>
         </div>
         <div class="posts row col-sm-8 col-sm-offset-2">
-            <% for (let x in messages) { %>
-                <p>Name: <%= messages[x].name %></p>
-                <p>Message: <%= messages[x].message_text %></p>
-                    <% for (y in messages[x]._comments) { %>
+            <% for (const message of messages) { %>
+                <p>Name: <%= message.name %></p>
+                <p>Message: <%= message.message_text %></p>
+                    <% for (const comment of message.comments) { %>
     				<div>
-    					<p> Name: <%=  messages[x]._comments[y].name %> </p>
-    					<p> Comment: <%=  messages[x]._comments[y].comment_text %> </p>
+    					<p> Name: <%=  comment.name %> </p>
+    					<p> Comment: <%=  comment.comment_text %> </p>
     				</div>
                     <br>
     				<% } %>
-                <form action="/messages/add_comment/<%= messages[x].id %>" method="post">
+                <form action="/messages/add_comment/<%= message._id %>" method="post">
                     Name: <br><input type="text" name="name"><br><br>
                     Comment: <br><textarea name="comment_text" rows="3" cols="20"></textarea><br><br>
-                    <input type="submit" value="Post comment">
+                    <button type="submit">Post comment</button>
                 </form>
             <% } %>
         </div>

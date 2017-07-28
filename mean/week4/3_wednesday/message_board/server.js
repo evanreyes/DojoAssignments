@@ -24,54 +24,52 @@ const messageSchema = new Schema({
 
 const commentSchema = new Schema({
     name: { type: String, min: [4, 'Name must be at least four characters'] },
-    _post: { type: Schema.Types.ObjectId, ref: 'Message' },
+    _message: { type: Schema.Types.ObjectId, ref: 'Message' },
     comment_text: { type: String, required: [true, 'Comment field cannot be blank'] }
     },
     { timestamps: true }
 );
 
-mongoose.model('Message', messageSchema);
-mongoose.model('Comment', commentSchema);
-
-const Message = mongoose.model('Message');
-const Comment = mongoose.model('Comment');
+const Message = mongoose.model('Message', messageSchema);
+const Comment = mongoose.model('Comment', commentSchema);
 
 app.get("/", function(req, res){
-	Message.find({}, false, true).populate('_comments').exec(function(err, messages){
-	      res.render('index', {messages: messages});
-	});
+	Message.find({}, false, true)
+    .populate('comments')
+    .then(messages => {
+        res.render('index', { messages });
+    })
+    .catch(err => {
+        console.log('Something went wrong:', err);
+        res.redirect('/')
+    })
 });
 
 
 app.post('/messages/new', function(req, res) {
     console.log(req.body);
-    let message = new Message( { name: req.body.name, message_text: req.body.message_text } );
-    message.save(function(err) {
-      if(err) {
-        console.log('Something went wrong with adding your message: ', err);
-      }
-      else {
-        console.log('Successfully created a new message!');
+    Message.create(req.body)
+    .then(message => {
+        res.redirect('/')
+    })
+    .catch(err => {
+        console.log('Something went wrong:', err);
         res.redirect('/');
-      }
     })
 })
 
 app.post('/messages/add_comment/:id', function(req, res){
-	var message_id = req.params.id;
-	Message.findOne({_id: message_id}, function(err, message){
-		var new_comment = new Comment( { name: req.body.name, comment_text: req.body.comment_text } );
-		new_comment._message = message._id;
-		Message.update({_id: message._id}, { $push: {'_comments': new_comment} }, function(err){
-            if (err) {
-                res.redirect('/');
-            }
-		});
-		new_comment.save(function(err){
-			console.log('Successfully added a comment!');
-			res.redirect('/');
-		});
-	});
+    console.log(req.body);
+    Comment.create( { name: req.body.name, comment_text: req.body.comment_text, _message: req.params.id } )
+    .then(comment => {
+        console.log(comment)
+        return Message.findByIdAndUpdate(comment._message, { $push: { comments: comment}})
+        .then(message => {
+            console.log('message', message);
+            res.redirect('/');
+        })
+    })
+    .catch(console.log);
 });
 
-const server = app.listen(port, () => console.log(`Listening on port ${ port }`));
+app.listen(port, () => console.log(`Listening on port ${ port }`));

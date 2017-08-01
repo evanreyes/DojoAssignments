@@ -1,0 +1,30 @@
+<div class="row">
+  <div class="col-sm-6 col-sm-offset-4">
+    <h1>US Time Zone Display</h1>
+  </div>
+</div>
+
+<main class="row">
+  <div class="col-sm-1 col-sm-offset-4">
+    <button class="btn btn-default" name="pst" (click)="change_time('pst')"
+      [ngClass]="{selected: current_zone === 'pst'}">PST</button>
+  </div>
+  <div>
+    <button class="btn btn-default" name="mst" (click)="change_time('mst')"
+      [ngClass]="{selected: current_zone === 'mst'}">MST</button>
+  </div>
+  <div class="col-lg-1">
+    <button class="btn btn-default" name="cst" (click)="change_time('cst')"
+      [ngClass]="{selected: current_zone === 'cst'}">CST</button>
+  </div>
+  <div class="col-lg-1">
+    <button class="btn btn-default" name="est" (click)="change_time('est')"
+      [ngClass]="{selected: current_zone === 'est'}">EST</button>
+  </div>
+  <div class="col-lg-1">
+    <button class="btn btn-default" name="clear" (click)="reset()">Clear</button>
+  </div>
+    <div class="row col-sm-6 col-sm-offset-4">
+      <h1>{{ current_time | date: 'medium' }}</h1>
+    </div>
+</main>

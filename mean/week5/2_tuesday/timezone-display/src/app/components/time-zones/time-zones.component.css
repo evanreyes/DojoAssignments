@@ -1,0 +1,7 @@
+main > div {
+  display: inline-block;
+}
+
+.selected {
+    background-color: yellow;
+}

@@ -1,13 +1,14 @@
 <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
 
 <header class="row">
-  <div class="col-sm-5 col-sm-offset-1">
+  <div class="col-sm-4 col-sm-offset-1">
     <h1>Switchboard</h1>
   </div>
 </header>
 
 <main class="row col-sm-offset-1">
   <div class="buttons" *ngFor="let button of buttons; let idx = index">
-    <input (click)="switch(idx)" type="submit" class="btn btn-lg btn-off txt-color" [value]=switch_text(idx) [ngClass]="{ 'btn-on': button }">
+    <button class="btn btn-on" *ngIf="button" [ngClass]="{'on': button}" (click)="switch(idx)" >ON</button>
+    <button class="btn btn-off" *ngIf="!button" [ngClass]="{'on': button}" (click)="switch(idx)">OFF</button>
   </div>
 </main>

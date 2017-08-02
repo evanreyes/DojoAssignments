@@ -11,10 +11,6 @@ export class SwitchComponent implements OnInit {
   switch(idx) {
     this.buttons[idx] = !this.buttons[idx]
   };
-
-  switch_text(idx) {
-    return this.buttons[idx] ? 'ON' : 'OFF';
-  };
   
   constructor() { }
 

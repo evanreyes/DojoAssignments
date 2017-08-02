@@ -1,0 +1,18 @@
+.btn-off {
+  background-color: red;
+}
+.btn-on {
+  background-color: green;
+}
+input {
+  color: whitesmoke;
+  border: 1px solid black;
+}
+.buttons {
+  display: inline-block;
+}
+
+header {
+    text-align: center;
+    margin: 2%;
+}

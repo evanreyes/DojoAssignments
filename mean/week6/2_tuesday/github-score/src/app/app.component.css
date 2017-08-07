@@ -1,0 +1,32 @@
+main {
+  border: 1px solid black;
+  margin: 2%;
+  padding: 1%;
+}
+
+form {
+  display: block;
+  margin: 2% 0%;
+}
+
+button {
+  display: block;
+  margin: 2% 0% 2% 0%;
+}
+
+.score {
+  text-align: center;
+}
+
+.red {
+  color: red
+}
+.orange {
+  color: orange
+}
+.green {
+  color: green
+}
+.blue {
+  color: blue
+}

@@ -1,0 +1,25 @@
+<main class="row">
+  <section class="col-sm-3 col-sm-offset-1">
+    <h1>Github Score</h1>
+    <form (submit)="calculateScore()" #formData="ngForm">
+      <label for="username">Github Username:</label>
+      <input type="text" name='username' required [(ngModel)]="username">
+      <button [disabled]="!formData.valid">Calculate my Github Score</button>
+    </form>
+  </section>
+  <section class="score col-sm-5 col-sm-offset-1">
+    <h1>Score</h1>
+    <div *ngIf="exists === true">
+      <h3>{{ score }}</h3>
+      <h5 class="red" *ngIf="score < 20">Needs work!</h5>
+      <h5 class="orange" *ngIf="score >= 20 && score < 50">A decent start!</h5>
+      <h5 *ngIf="score >= 50 && score < 100">Doing good!</h5>
+      <h5 class="green" *ngIf="score >= 100 && score < 200">Great job!</h5>
+      <h5 class="blue" *ngIf="score >= 200">Github elite!</h5>
+    </div>
+    <div *ngIf="exists === false">
+      <h5 class="red">User does not exist.</h5>
+    </div>
+    <div *ngIf="exists === null"></div>
+  </section>
+</main>

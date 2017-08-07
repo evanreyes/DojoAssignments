@@ -1,0 +1,45 @@
+
+<header class="row col-sm-9">
+  <fieldset>
+  <legend>Power Levels!</legend>
+  <div>
+    <form class="form-horizontal">
+      <div class="form-group">
+        <label for="power_level" class="control-label col-sm-2">Initial Power (1-100)</label>
+        <div class="col-sm-2" id="sliderDiv">
+          <input type="number" min="1" max="100" name="power_level" onchange="showValue(this.value)" [(ngModel)]="power_level.power" #powerLevel="ngModel">
+        </div>
+        <div class="col-sm-6">
+          <img src="../assets/supersaiyan.jpg" class="pull-right" alt="supersaiyan">
+        </div>
+      </div>
+    </form>
+  </div>
+  </fieldset>
+</header>
+
+
+<main>
+  <section class="row">
+    <div class="col-sm-3 gutter">
+      <app-human [human_power]="power_level.power * 1"></app-human>
+    </div>
+    <div class="col-sm-3 gutter">
+      <app-saiyan [saiyan_power]="power_level.power * 10"></app-saiyan>
+    </div>
+    <div class="col-sm-3 gutter">
+      <app-super-saiyan [super_saiyan_power]="power_level.power * 90"></app-super-saiyan>
+    </div>
+  </section>
+  <section class="row">
+    <div class="col-sm-3 gutter">
+      <app-super-saiyan-two [super_saiyan_two_power]="power_level.power * 150"></app-super-saiyan-two>
+    </div>
+    <div class="col-sm-3 gutter">
+      <app-super-saiyan-three [super_saiyan_three_power]="power_level.power * 250"></app-super-saiyan-three>
+    </div>
+    <div class="col-sm-3 gutter">
+      <app-super-saiyan-four [super_saiyan_four_power]="power_level.power * 500"></app-super-saiyan-four>
+    </div>
+  </section>
+</main>

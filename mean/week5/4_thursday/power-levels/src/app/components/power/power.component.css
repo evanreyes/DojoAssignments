@@ -1,0 +1,12 @@
+fieldset {
+  margin: 2%;
+}
+
+img {
+  width: 250px;
+  display: inline-block;
+}
+
+.gutter {
+  margin: 0% 2% 2% 2%;
+}

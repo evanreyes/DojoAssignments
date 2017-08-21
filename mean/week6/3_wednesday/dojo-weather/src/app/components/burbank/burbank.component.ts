@@ -21,6 +21,7 @@ export class BurbankComponent implements OnInit {
   ngOnInit() {
     this.weather = this._weatherService.getWeather('burbank')
     .then( weather => {
+      console.log(this.weather)
       this.humidity = weather.main.humidity;
       this.temp = weather.main.temp;
       this.high_temp = weather.main.temp_max;

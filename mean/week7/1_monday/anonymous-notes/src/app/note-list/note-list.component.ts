@@ -11,7 +11,7 @@ import { NoteService } from '../services/note.service';
 export class NoteListComponent implements OnInit {
 
     notes: Array<Note> = [];
-    constructor(private noteService: NookService) {}
+    constructor(private noteService: NoteService) {}
 
     createNote(note: Note): void {
       console.log('note', note);

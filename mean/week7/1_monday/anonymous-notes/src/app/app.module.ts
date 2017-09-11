@@ -6,6 +6,7 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { NoteListComponent } from './note-list/note-list.component';
 import { NoteCreateComponent } from './note-create/note-create.component';
+import { NoteService } from './services/note.service';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,7 @@ import { NoteCreateComponent } from './note-create/note-create.component';
     FormsModule,
     HttpModule,
   ],
-  providers: [],
+  providers: [NoteService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

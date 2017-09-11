@@ -1,6 +1,7 @@
-<app-note-create (noteEmitter)='createNote($event)'></app-note-create>
+<app-note-create></app-note-create>
 <section>
-  <div *ngFor='let note of notes'>
-        <p>{{ note.note }}</p>
+  <div class="note row" *ngFor='let note of notes'>
+        <p class="col-sm-6">{{ note.note }}</p>
+        <p>{{ note.createdAt }}</p>
   </div>
 </section>
